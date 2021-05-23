@@ -10,7 +10,7 @@
 
 <body>
     <?php
-    include 'conexiondb_CRUD.php';
+    include 'C:\xampp\htdocs\Instituto\Programacion\tp-progra-restaurant/conexiondb_CRUD.php';
     if (isset($_GET['id'])) {
         $userid = $_GET['id'];
         $sql = "DELETE FROM persona WHERE id='" . $userid . "' ";

@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-    include 'conexiondb_CRUD.php';
+    include 'C:\xampp\htdocs\Instituto\Programacion\tp-progra-restaurant/conexiondb_CRUD.php';
     $sql="SELECT * FROM persona";
     // $resultado=mysql_query($sql);
     $resultado = $conexionDB->query($sql);
