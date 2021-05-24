@@ -17,15 +17,6 @@ $resultado = $conexionDB->query($sql);
 while ($filas = $resultado->fetch_array()) { 
 ?>
 
-<table>
-        <tr>
-            <td><?php echo $filas['id'] ?></td>
-            <td><?php echo $filas['nombre'] ?></td>
-            <td><?php echo $filas['telefono'] ?></td>
-            <td><?php echo $filas['mail'] ?></td>
-        </tr>
-    </table>
-
 
  <div>
         <form action="editar.php">

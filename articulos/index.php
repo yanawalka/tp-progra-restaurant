@@ -9,7 +9,7 @@
 <body>
     <?php
     include 'C:\xampp\htdocs\Instituto\Programacion\tp-progra-restaurant/conexiondb_CRUD.php';
-    $sql="SELECT * FROM persona";
+    $sql="SELECT * FROM articulo";
     // $resultado=mysql_query($sql);
     $resultado = $conexionDB->query($sql);
     ?>
@@ -20,10 +20,9 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>USUARIO</th>
-                    <th>APENOM</th>
-                    <th>EMAIL</th>
-                    <th>CLAVE</th>
+                    <th>NOMBRE</th>
+                    <th>PRECIO</th>
+                    <th>DESCRIPCION</th>
                     <th>ACCIONES</th>
                 </tr>
             </thead>
@@ -32,10 +31,9 @@
             ?>
                 <tr>
                     <td><?php echo $filas['id'] ?></td>
-                    <td><?php echo $filas['usuario'] ?></td>
-                    <td><?php echo $filas['apenom'] ?></td>
-                    <td><?php echo $filas['email'] ?></td>
-                    <td><?php echo $filas['clave'] ?></td>
+                    <td><?php echo $filas['nombre'] ?></td>
+                    <td><?php echo $filas['precio'] ?></td>
+                    <td><?php echo $filas['descripcion'] ?></td>
                     <td>
                         <a href="editar.php?id=<?php echo $filas['id']?>">Editar</a>
                         <a href="eliminar.php?id=<?php echo $filas['id']?>">Eliminar</a>

@@ -16,16 +16,6 @@ $sql="SELECT * FROM persona WHERE id='".$id."' ";
 $resultado = $conexionDB->query($sql);
 while ($filas = $resultado->fetch_array()) { 
 ?>
-    <table>
-        <tr>
-            <td><?php echo $filas['id'] ?></td>
-            <td><?php echo $filas['usuario'] ?></td>
-            <td><?php echo $filas['apenom'] ?></td>
-            <td><?php echo $filas['email'] ?></td>
-            <td><?php echo $filas['clave'] ?></td>
-        </tr>
-    </table>
-
     <div>
         <form action="editar.php">
             <input type="hidden" name="txtid" value="<?php echo $filas['id']?>">

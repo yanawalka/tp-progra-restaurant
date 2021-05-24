@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Usuario</title>
+    <title>Agregar Articulo</title>
 </head>
 
 <body>
@@ -14,14 +14,12 @@
 ?>
     <div>
         <form action="agregar.php" method="GET">
-            <label>Usuario</label><br>
-            <input type="text" name="txtuser"><br>
-            <label>Nombre y Apellido</label><br>
-            <input type="text" name="txtapenom"><br>
-            <label>Email</label><br>
-            <input type="text" name="txtemail"><br>
-            <label>clave</label><br>
-            <input type="text" name="txtclave"><br>
+            <label>Nombre</label><br>
+            <input type="text" name="txtnombre"><br>
+            <label>Precio</label><br>
+            <input type="text" name="txtprecio"><br>
+            <label>Descripcion</label><br>
+            <input type="text" name="txtdescripcion"><br>
             <input type="submit" value="Agregar" name="submit">
             <hr>
             <a href="index.php">Regresar</a>
@@ -30,12 +28,11 @@
 
     <?php 
     if(isset($_GET['submit'])){
-    $user=$_GET['txtuser'];
-    $email=$_GET['txtemail'];
-    $apenom=$_GET['txtapenom'];
-    $clave=$_GET['txtclave'];
-        if($user!=null && $email!=null && $apenom!=null && $clave!=null){
-        $sql="INSERT INTO persona (usuario,email,apenom,clave)VALUES('".$user."','".$email."','".$apenom."','".$clave."')";
+    $nombre=$_GET['txtnombre'];
+    $descripcion=$_GET['txtdescripcion'];
+    $precio=$_GET['txtprecio'];
+        if($nombre!=null && $descripcion!=null && $precio!=null){
+        $sql="INSERT INTO articulo (nombre,descripcion,precio)VALUES('".$nombre."','".$descripcion."','".$precio."')";
         $resultado=$conexionDB->query($sql);
         if ($resultado==1){
             header("location:index.php");

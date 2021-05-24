@@ -13,7 +13,7 @@
     include 'C:\xampp\htdocs\Instituto\Programacion\tp-progra-restaurant/conexiondb_CRUD.php';
     if (isset($_GET['id'])) {
         $userid = $_GET['id'];
-        $sql = "DELETE FROM persona WHERE id='" . $userid . "' ";
+        $sql = "DELETE FROM articulo WHERE id='" . $userid . "' ";
         $conexionDB->query($sql);
         header("location:index.php");
     }
