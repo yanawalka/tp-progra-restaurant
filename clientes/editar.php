@@ -10,34 +10,23 @@
 
 <body>
     <?php
-    include 'conexiondb_CRUD.php';
-    include 'eliminar.php';
+    include 'C:\xampp\htdocs\Instituto\Programacion\tp-progra-restaurant/conexiondb_CRUD.php';
 $id=$_GET['id'];
-$sql="SELECT * FROM persona WHERE id='".$id."' ";
+$sql="SELECT * FROM clientes WHERE id='".$id."' ";
 $resultado = $conexionDB->query($sql);
 while ($filas = $resultado->fetch_array()) { 
 ?>
-    <table>
-        <tr>
-            <td><?php echo $filas['id'] ?></td>
-            <td><?php echo $filas['usuario'] ?></td>
-            <td><?php echo $filas['apenom'] ?></td>
-            <td><?php echo $filas['email'] ?></td>
-            <td><?php echo $filas['clave'] ?></td>
-        </tr>
-    </table>
-
     <div>
         <form action="editar.php">
             <input type="hidden" name="txtid" value="<?php echo $filas['id']?>">
             <label>Nombre y Apellido</label><br>
             <input type="text" name="txtapenom" value="<?php echo $filas['apenom']?>"><br>
-            <label>Usuario</label><br>
-            <input type="text" name="txtuser" value="<?php echo $filas['usuario']?>"><br>
             <label>Email</label><br>
-            <input type="text" name="txtemail" value="<?php echo $filas['email']?>"><br>
-            <label>clave</label><br>
-            <input type="text" name="txtclave" value="<?php echo $filas['clave']?>"><br>
+            <input type="text" name="txtemail" value="<?php echo $filas['mail']?>"><br>
+            <label>telefono</label><br>
+            <input type="text" name="txttelefono" value="<?php echo $filas['telefono']?>"><br>
+            <label>Direccion</label><br>
+            <input type="text" name="txtdireccion" value="<?php echo $filas['direccion']?>"><br>
             <input type="submit" value="Actualizar" name="submit">
             <hr>
             <a href="index.php">Regresar</a>
@@ -47,14 +36,13 @@ while ($filas = $resultado->fetch_array()) {
     <?php 
     if(isset($_GET['submit'])){
     $idp=$_GET['txtid'];
-    $user=$_GET['txtuser'];
+    $direccion=$_GET['txtdireccion'];
     $email=$_GET['txtemail'];
     $apenom=$_GET['txtapenom'];
-    $clave=$_GET['txtclave'];
-    if($user!=null && $email!=null && $apenom!=null && $clave!=null){
-    $sql2="UPDATE persona SET usuario='".$user."', email='".$email."',apenom='".$apenom."',clave='".$clave."' WHERE id='".$idp."' ";   
+    $telefono=$_GET['txttelefono'];
+    if($direccion!=null && $email!=null && $apenom!=null && $telefono!=null){
+    $sql2="UPDATE clientes SET direccion='".$direccion."', mail='".$email."',apenom='".$apenom."',telefono='".$telefono."' WHERE id='".$idp."' ";   
     $resultado2=$conexionDB->query($sql2);
-        echo "entro";
         if ($resultado2==1){
             header("location:index.php");
             echo "Se agrego nuevo registro";

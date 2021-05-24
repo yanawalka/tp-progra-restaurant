@@ -12,21 +12,16 @@
     <?php
     include 'C:\xampp\htdocs\Instituto\Programacion\tp-progra-restaurant/conexiondb_CRUD.php';
 $id=$_GET['id'];
-$sql="SELECT * FROM persona WHERE id='".$id."' ";
+$sql="SELECT * FROM marca WHERE id='".$id."' ";
 $resultado = $conexionDB->query($sql);
 while ($filas = $resultado->fetch_array()) { 
 ?>
+
     <div>
         <form action="editar.php">
             <input type="hidden" name="txtid" value="<?php echo $filas['id']?>">
-            <label>Nombre y Apellido</label><br>
-            <input type="text" name="txtapenom" value="<?php echo $filas['apenom']?>"><br>
-            <label>Usuario</label><br>
-            <input type="text" name="txtuser" value="<?php echo $filas['usuario']?>"><br>
-            <label>Email</label><br>
-            <input type="text" name="txtemail" value="<?php echo $filas['email']?>"><br>
-            <label>clave</label><br>
-            <input type="text" name="txtclave" value="<?php echo $filas['clave']?>"><br>
+            <label>Nombre</label><br>
+            <input type="text" name="txtnombre" value="<?php echo $filas['nombre']?>"><br>
             <input type="submit" value="Actualizar" name="submit">
             <hr>
             <a href="index.php">Regresar</a>
@@ -36,12 +31,9 @@ while ($filas = $resultado->fetch_array()) {
     <?php 
     if(isset($_GET['submit'])){
     $idp=$_GET['txtid'];
-    $user=$_GET['txtuser'];
-    $email=$_GET['txtemail'];
-    $apenom=$_GET['txtapenom'];
-    $clave=$_GET['txtclave'];
-    if($user!=null && $email!=null && $apenom!=null && $clave!=null){
-    $sql2="UPDATE persona SET usuario='".$user."', email='".$email."',apenom='".$apenom."',clave='".$clave."' WHERE id='".$idp."' ";   
+    $nombre=$_GET['txtnombre'];
+    if($nombre!=null){
+    $sql2="UPDATE marca SET nombre='".$nombre."' WHERE id='".$idp."' ";   
     $resultado2=$conexionDB->query($sql2);
         if ($resultado2==1){
             header("location:index.php");

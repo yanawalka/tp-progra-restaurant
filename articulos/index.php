@@ -8,12 +8,13 @@
 </head>
 <body>
     <?php
-    include 'conexiondb_CRUD.php';
+    include 'C:\xampp\htdocs\Instituto\Programacion\tp-progra-restaurant/conexiondb_CRUD.php';
     $sql="SELECT * FROM persona";
     // $resultado=mysql_query($sql);
     $resultado = $conexionDB->query($sql);
     ?>
     <div>
+    <a href="http://localhost/Instituto/Programacion/tp-progra-restaurant/indexPrincipal.php">Menu Principal</a>
     <a href="agregar.php">Nuevo</a>
         <table>
             <thead>

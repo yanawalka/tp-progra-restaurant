@@ -10,7 +10,7 @@
 
 <body>
 <?php 
-    include 'conexiondb_CRUD.php';
+    include 'C:\xampp\htdocs\Instituto\Programacion\tp-progra-restaurant/conexiondb_CRUD.php';
 ?>
     <div>
         <form action="agregar.php" method="GET">
