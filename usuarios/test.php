@@ -8,10 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="loggin.css">
+    <link rel="stylesheet" href="test.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="loggin.js"></script>
+    <script src="test.js"></script>
 
     <title>Document</title>
 </head>
@@ -41,7 +41,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-lg-12">
-                                <form id="login-form" action="loggin.php" method="GET"
+                                <form id="login-form" action="test.php" method="GET"
                                     role="form" style="display: block;">
                                     <div class="form-group">
                                         <input type="text" name="txtuser" id="username" tabindex="1"
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <form id="register-form" action="loggin.php" method="GET"
+                                <form id="register-form" action="test.php" method="GET"
                                     role="form" style="display: none;">
                                     <div class="form-group">
                                         <input type="text" name="txtuser" id="username" tabindex="1"
